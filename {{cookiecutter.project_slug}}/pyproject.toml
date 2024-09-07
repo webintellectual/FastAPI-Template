@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "{{cookiecutter-project-slug}}"
+version = "0.1.0"
+description = "{{cookiecutter.project_description}}"
+authors = ["Akshay <78297310+webintellectual@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^{{cookiecutter.python_version}}"
+fastapi = "^0.113.0"
+uvicorn = "^0.30.6"
+python-dotenv = "^1.0.1"
+SQLAlchemy = "^2.0.34"
+asyncpg = "^0.29.0"
+psycopg2-binary = "^2.9.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

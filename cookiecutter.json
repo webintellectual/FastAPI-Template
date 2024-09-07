@@ -1,0 +1,17 @@
+{
+    "project_name": "My FastAPI Project",
+    "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '-')|replace('_', '-') }}",
+    "package_name": "{{ cookiecutter.project_slug|replace('-', '_') }}",
+    "project_description": "A FastAPI-Docker project.",
+
+    "python_version": "3.12",
+
+
+
+
+
+
+    "need_database_setup": "yes",
+    "database_application": "postgresql",
+    "database_url": "postgresql://user:password@localhost/dbname"
+}
