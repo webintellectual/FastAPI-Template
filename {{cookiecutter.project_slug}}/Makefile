@@ -19,11 +19,11 @@ check-constants:
     done
 
 refactor: ## update toml and Dockerfile
-	@sed -i '' "s/^name = \".*\"/name = \"$(PROJECT_SLUG)\"/" pyproject.toml
-	@sed -i '' "s/^python = \".*\"/python = \"^$(PYTHON_VERSION)\"/" pyproject.toml
-	@sed -i '' "s|^WORKDIR .*|WORKDIR /$(PROJECT_SLUG)|" Dockerfile
-	@sed -i '' "s|^FROM python:.*|FROM python:$(PYTHON_VERSION)|" Dockerfile
-	@sed -i '' "s|^EXPOSE .*|EXPOSE $(CONTAINER_PORT)|" Dockerfile
+	@sed -i "s/^name = \".*\"/name = \"$(PROJECT_SLUG)\"/" pyproject.toml
+	@sed -i "s/^python = \".*\"/python = \"^$(PYTHON_VERSION)\"/" pyproject.toml
+	@sed -i "s|^WORKDIR .*|WORKDIR /$(PROJECT_SLUG)|" Dockerfile
+	@sed -i "s|^FROM python:.*|FROM python:$(PYTHON_VERSION)|" Dockerfile
+	@sed -i "s|^EXPOSE .*|EXPOSE $(CONTAINER_PORT)|" Dockerfile
 
 install: ## Installations of dependencies
 	@poetry install
