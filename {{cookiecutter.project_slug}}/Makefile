@@ -1,4 +1,4 @@
-include constants.mk
+include config.mk
 
 .DEFAULT_GOAL := help
 .PHONY: help 
