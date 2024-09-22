@@ -20,7 +20,11 @@ check-constants:
 
 refactor: ## update toml and Dockerfile
 	@sed -i "s/^name = \".*\"/name = \"$(PROJECT_SLUG)\"/" pyproject.toml
-	@sed -i "s/^python = \".*\"/python = \"^$(PYTHON_VERSION)\"/" pyproject.toml
+	@if [ -n "$(PYTHON_RANGE)" ]; then \
+            sed -i "s/^python = \".*\"/python = \"$(PYTHON_RANGE)\"/" pyproject.toml; \
+        else \
+            sed -i "s/^python = \".*\"/python = \"^$(PYTHON_VERSION)\"/" pyproject.toml; \
+        fi
 	@sed -i "s|^WORKDIR .*|WORKDIR /$(PROJECT_SLUG)|" Dockerfile
 	@sed -i "s|^FROM python:.*|FROM python:$(PYTHON_VERSION)|" Dockerfile
 	@sed -i "s|^EXPOSE .*|EXPOSE $(CONTAINER_PORT)|" Dockerfile
