@@ -2,6 +2,9 @@
 
 PYTHON_VERSION:={{cookiecutter.python_version}}
 
+# optional. leave empty to use the exact version in pyproject.toml
+PYTHON_RANGE:=
+
 # aka the project name and root directory name:
 PROJECT_SLUG:={{cookiecutter.project_slug}}
 
